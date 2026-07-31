@@ -1,4 +1,4 @@
-#include </home/24pc03/chronicle/src/console.cpp>
+#include "Console.hpp"
 
 int main()
 {
