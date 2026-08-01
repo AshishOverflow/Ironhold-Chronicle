@@ -1,7 +1,7 @@
 #include "InputBuffer.hpp"
 #include <iostream>
 
-void InputBuffer::operator()(const string& input) 
+void InputBuffer::operator()(const std::string& input) 
 { 
     history.push_back(input);
 }
@@ -11,6 +11,6 @@ int InputBuffer::get_size()
 }
 void InputBuffer::display()
 {
-    for (string s : history)
-        cout << s << "\n";
+    for (std::string s : history)
+        std::cout << s << "\n";
 }

@@ -5,11 +5,11 @@
 #include <iostream>
 #include <vector>
 void Console::display(){
-    string buf;
+    std::string buf;
     int ch;
     do{
-        cout<<"ironhold>";
-        getline(cin,buf);
+        std::cout<<"ironhold>";
+        getline(std::cin,buf);
         store(buf);
         if (buf[0] != '.')
         {
@@ -26,35 +26,35 @@ void Console::display(){
             case 1:
                 return;
             case 2:
-                cout<<".quit — flush open state and exit cleanly\n.help — print a summary of available commands\n.version — print Chronicle v0.1 — Ironhold World Engine\n.status — print World: offline\n";
+                std::cout<<".quit — flush open state and exit cleanly\n.help — print a summary of available commands\n.version — print Chronicle v0.1 — Ironhold World Engine\n.status — print World: offline\n.history - To view previous commands\n";
                 break;
             case 3:
-                cout<<"Chronicle v0.1 — Ironhold World Engine\n";
+                std::cout<<"Chronicle v0.1 — Ironhold World Engine\n";
                 break;
             case 4:
-                cout<<"World: offline\n";
+                std::cout<<"World: online\n";
                 break;
             case 5:
-                cout<<"History length: "<<store.get_size()<<"\n";
+                std::cout<<"History length: "<<store.get_size()<<"\n";
                 store.display();
                 break;
             default:
-                cout<<"AppState::UNKNOWN\n";
+                std::cout<<"AppState::UNKNOWN\n";
                 break;
         }
     }while(buf != ".quit");
 }
 
 void Console::execute(const Command& c,WorldState& w){
-    vector<string> tokens = c.getTokens();
+    std::vector<std::string> tokens = c.getTokens();
     if (tokens[0] == "SPAWN" && tokens[1] == "PLAYER")
     {
-        vector<Player>players = w.getPlayers();
+        std::vector<Player>players = w.getPlayers();
         for(auto p: players)
         {
             if (p.getId() == static_cast<uint32_t>(stoul(tokens[2])))
             {
-                cout<<"Error: ID already exists.\n";
+                std::cout<<"Error: ID already exists.\n";
                 return;
             }
         }

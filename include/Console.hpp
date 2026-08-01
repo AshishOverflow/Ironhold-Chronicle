@@ -5,12 +5,11 @@
 #include "Command.hpp"
 #include "InputBuffer.hpp"
 #include "WorldState.hpp"
-using namespace std;
 
 class Console
 {
     private:
-    map<string,int> m{{".quit",1},{".help",2},{".version",3},{".status",4},{".history",5}};
+    std::map<std::string,int> m{{".quit",1},{".help",2},{".version",3},{".status",4},{".history",5}};
     InputBuffer store;
     WorldState world;
     public:

@@ -2,19 +2,19 @@
 #include <iostream>
 void WorldState::addPlayer(Player *p){
     players.push_back(*p);
-    cout<<"Spawned.\n";
+    std::cout<<"Spawned.\n";
 }
 
 void WorldState::viewPlayers(){
     for(auto p:players)
     {
-        cout<<"["<<p.getId()<<"]"<<" "<<p.getUsername()<<" <"<<p.getEmail()<<">"<<"\n";
+        std::cout<<"["<<p.getId()<<"]"<<" "<<p.getUsername()<<" <"<<p.getEmail()<<">"<<"\n";
     }
-    cout<<players.size()<<"entities.\n";
+    std::cout<<players.size()<<"entities.\n";
 
 }
 
-vector<Player> WorldState::getPlayers()
+std::vector<Player> WorldState::getPlayers()
 {
     return players;
 }
