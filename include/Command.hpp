@@ -2,18 +2,18 @@
 
 #include <string>
 #include <vector>
-using namespace std;
+
 class Command{
     private:
-    string cmd;
-    vector<string> tokens;
+    std::string cmd;
+    std::vector<std::string> tokens;
     public:
-    Command(string u_cmd){
+    Command(std::string u_cmd){
         cmd = u_cmd;
     }
     bool validateCommand();
-    bool validateId(string id);
-    bool validateUsername(string username);
-    bool validateEmail(string email);
-    vector<string> getTokens() const;
+    bool validateId(std::string id);
+    bool validateUsername(std::string username);
+    bool validateEmail(std::string email);
+    std::vector<std::string> getTokens() const;
 };

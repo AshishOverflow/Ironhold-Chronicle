@@ -2,13 +2,12 @@
 
 #include <vector>
 #include <string>
-using namespace std;
 
 class InputBuffer{
     private:
-    vector<string> history;
+    std::vector<std::string> history;
     public:
-    void operator()(const string& input);
+    void operator()(const std::string& input);
     int get_size();
     void display();
 };
